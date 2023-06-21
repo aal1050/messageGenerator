@@ -1,11 +1,11 @@
 // My Message / Quote Generator
-const quoteFactory = (category, key, quoteNum, quote, additionalInfo) => {
+const quoteFactory = (category, key, quoteNum, quote, sourceInfo) => {
     return {
         _category: category,
         _keyID: key,
         _quoteNum: quoteNum,
         _quote: quote,
-        _additional_info: additionalInfo,
+        _source_info: sourceInfo,
 
         //TO DO: Add setters and getters
     }
@@ -252,6 +252,6 @@ console.log("Name: " + selectedQuote._keyID);
 console.log("Quote Number: " + selectedQuote._quoteNum);
 console.log("Quote: " + selectedQuote._quote);
 
-if (selectedQuote._additional_info)
-    console.log("Additional Info: " + selectedQuote._additional_info);
+if (selectedQuote._source_info)
+    console.log("Source: " + selectedQuote._source_info);
 
