@@ -1,7 +1,7 @@
 // My Quote Generator
 
 //--------------------------------
-//Initalize quoteFactory function
+// quoteFactory function
 //--------------------------------
 const quoteFactory = (category, subject, quoteNum, quote, sourceInfo) => {
     return {
@@ -15,18 +15,18 @@ const quoteFactory = (category, subject, quoteNum, quote, sourceInfo) => {
     }
 }
 
-// Build Data -- Data consists of a nested set of arrays  
+// Build Data -- Data consists of a nested set of arrays (quote objects grouped by subject grouped by category)
 const allQuotesbyCateogry = buildData();
 
 //get random cateogry array -- i.e. People Quotes, Literary Works Quotes or Film Quotes etc
 const selectedCategoryArray = getRandomItem(allQuotesbyCateogry);
 
 //get random subject array in the selected Category i.e. if the selected category is
-//people then randomly select array of Aristotle quotes, Laozi quotes or Einstein quotes etc.   
+//"People" then randomly select an array of either Aristotle quotes, Laozi quotes, Einstein quotes etc.   
 const selectedSubjectArray = getRandomItem(selectedCategoryArray);
 
 //get random quote object in selected subject array i.e. if selected subject is "Aristotle", randomly pick 
-// one of the quotes in array of Aristotle quotes.
+// one of the quotes in an array of Aristotle quotes.
 const selectedQuote = getRandomItem(selectedSubjectArray);
 
 //Display quote to terminal
