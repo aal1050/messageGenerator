@@ -230,22 +230,19 @@ const filmQuotes = [film1Quotes, film2Quotes, film3Quotes];
 // Create array of all quotes by Category
 const allQuotesbyCateogry = [peopleQuotes, literaryWorksQuotes, filmQuotes];
 
+function getRandomItem (array){
+    const index = Math.floor(Math.random() * (array.length - 1));
+    return array[index];
+}
+
 //get random cateogry  -- eg. People, Literary Works, Films etc.
-const numberofCategories = allQuotesbyCateogry.length;
-//console.log("Number of Categories: " + numberofCategories);
-let index = Math.floor(Math.random() * (numberofCategories - 1));
-const selectedCategory = allQuotesbyCateogry[index];
+const selectedCategoryArray = getRandomItem(allQuotesbyCateogry);
 
-//get random item in selected Category -- e.g. Aristotle, Laozi, The Little Prince, Dune etc.  
-const numberofItems = selectedCategory.length;
-index = Math.floor(Math.random() * (numberofItems - 1));
-const selectedItem = selectedCategory[index];
+//get random quote array in selected Category -- e.g. Aristotle quotes, Laozi quotes, The Little Prince quotes etc.  
+const selectedQuoteArray = getRandomItem(selectedCategoryArray);
 
-//get random quote for selected item in selected Category 
-const numberofQuotes = selectedItem.length;
-index = Math.floor(Math.random() * (numberofQuotes - 1));
-const selectedQuote = selectedItem[index];
-
+//get random quote object in selected Quote Array in selected Category 
+const selectedQuote = getRandomItem(selectedQuoteArray);
 
 console.log("Category: " + selectedQuote._category);
 console.log("Name: " + selectedQuote._keyID);
