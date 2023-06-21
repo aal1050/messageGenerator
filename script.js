@@ -41,7 +41,8 @@ else
 //Function: getRandomItem
 //-------------------------
 function getRandomItem(array) {
-    const index = Math.floor(Math.random() * (array.length - 1));
+    const index = Math.floor(Math.random() * array.length);
+    console.log("Index: " + index);
     return array[index];
 }
 
