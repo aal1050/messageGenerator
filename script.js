@@ -42,7 +42,7 @@ else
 //-------------------------
 function getRandomItem(array) {
     const index = Math.floor(Math.random() * array.length);
-    console.log("Index: " + index);
+    //console.log("Index: " + index);
     return array[index];
 }
 
