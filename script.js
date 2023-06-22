@@ -25,6 +25,13 @@ const quoteFactory = (category, subject, quoteNum, quote, sourceInfo) => {
         },
         get source() {
             return this._source_info;
+        },
+        display() {
+            console.log(this._quote);
+            if (this._source)
+                console.log("-- " + this._subject + " -- " + this._source);
+            else
+                console.log("-- " + this._subject);
         }
 
     }
@@ -45,11 +52,7 @@ const selectedSubjectArray = getRandomItem(selectedCategoryArray);
 const selectedQuote = getRandomItem(selectedSubjectArray);
 
 //Display quote to terminal
-console.log(selectedQuote.quote);
-if (selectedQuote.source)
-    console.log("-- " + selectedQuote.subject + " -- " + selectedQuote.source);
-else
-    console.log("-- " + selectedQuote.subject);
+selectedQuote.display();
 
 
 //-------------------------
