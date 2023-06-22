@@ -11,7 +11,22 @@ const quoteFactory = (category, subject, quoteNum, quote, sourceInfo) => {
         _quote: quote,
         _source_info: sourceInfo,
 
-        //TO DO: Add setters and getters
+        get category() {
+            return this._category;
+        },
+        get subject() {
+            return this._subject;
+        },
+        get quoteNumber() {
+            return this._quoteNum;
+        },
+        get quote() {
+            return this._quote;
+        },
+        get source() {
+            return this._source_info;
+        }
+
     }
 }
 
@@ -30,11 +45,11 @@ const selectedSubjectArray = getRandomItem(selectedCategoryArray);
 const selectedQuote = getRandomItem(selectedSubjectArray);
 
 //Display quote to terminal
-console.log(selectedQuote._quote);
-if (selectedQuote._source_info)
-    console.log("-- " + selectedQuote._subject + " -- " + selectedQuote._source_info);
+console.log(selectedQuote.quote);
+if (selectedQuote.source)
+    console.log("-- " + selectedQuote.subject + " -- " + selectedQuote.source);
 else
-    console.log("-- " + selectedQuote._subject);
+    console.log("-- " + selectedQuote.subject);
 
 
 //-------------------------
