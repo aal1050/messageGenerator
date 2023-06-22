@@ -11,21 +11,6 @@ const quoteFactory = (category, subject, quoteNum, quote, sourceInfo) => {
         _quote: quote,
         _source_info: sourceInfo,
 
-        get category() {
-            return this._category;
-        },
-        get subject() {
-            return this._subject;
-        },
-        get quoteNumber() {
-            return this._quoteNum;
-        },
-        get quote() {
-            return this._quote;
-        },
-        get source() {
-            return this._source_info;
-        },
         display() {
             console.log(this._quote);
             if (this._source)
